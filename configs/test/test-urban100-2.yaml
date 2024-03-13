@@ -1,0 +1,20 @@
+test_dataset:
+  dataset:
+    name: image-folder
+    args:
+      root_path: ./data/Urban100
+  wrapper:
+    name: sr-implicit-downsampled-cascaded
+    args:
+      batch_size: 1
+      scale_max: 2
+      scale_base: 2
+      phase: valid
+  batch_size: 1
+
+eval_type: benchmark-2
+eval_bsize: 30000
+
+data_norm:
+  inp: {sub: [0.5], div: [0.5]}
+  gt: {sub: [0.5], div: [0.5]}
